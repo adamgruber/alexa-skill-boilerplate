@@ -1,0 +1,6 @@
+{
+  "error": "Sorry, an error occurred.",
+  "help": "You can say tell me an AWeber fact, or, you can say exit... What can I help you with?",
+  "helpReprompt": "What can I help you with?",
+  "stop": "Goodbye!",
+}

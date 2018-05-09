@@ -1,0 +1,39 @@
+{
+  "name": "alexa-skill-boilerplate",
+  "version": "1.0.0",
+  "description": "Boilerplate for creating an Alexa skill using the Amazon Skills Kit SDK",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/adamgruber/alexa-skill-boilerplate.git"
+  },
+  "scripts": {
+    "tunnel": "node support/tunnel.js",
+    "start": "./start.sh",
+    "lint": "eslint index.js src"
+  },
+  "keywords": [
+    "alexa",
+    "boilerplate",
+    "voice skill"
+  ],
+  "author": "Adam Gruber",
+  "license": "MIT",
+  "dependencies": {
+    "ask-sdk": "^2.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-prettier": "^2.6.0",
+    "koa": "^2.5.1",
+    "koa-bodyparser": "^4.2.0",
+    "koa-router": "^7.4.0",
+    "koa-static": "^4.0.2",
+    "ngrok": "^3.0.1",
+    "nodemon": "^1.17.3",
+    "prettier": "^1.12.1"
+  }
+}
