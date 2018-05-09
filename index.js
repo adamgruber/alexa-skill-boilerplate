@@ -121,7 +121,7 @@ const SessionEndedRequestHandler = {
 exports.handler = async (event, context) => {
   if (!skill) {
     skill = Alexa.SkillBuilders.standard()
-      .addRequesstHandlers(
+      .addRequestHandlers(
         /* Add handlers here */
         HelpHandler,
         ExitHandler,

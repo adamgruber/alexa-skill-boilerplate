@@ -24,6 +24,7 @@ router.post('/', async ctx => {
     console.log(res.response);
     ctx.body = res;
   } catch (err) {
+    console.log(err);
     ctx.status = err.status || 500;
     ctx.body = err.message;
   }
