@@ -13,8 +13,16 @@ alexa-skill-boilerplate
 ├── package-lock.json
 ├── package.json
 ├── src
-│   ├── messages.json
+│   ├── handlers
+│   │   ├── AmazonCancelStop.js
+│   │   ├── AmazonFallback.js
+│   │   ├── AmazonHelp.js
+│   │   ├── BasicIntentHandler.js
+│   │   ├── Error.js
+│   │   ├── SessionEnded.js
+│   │   └── index.js
 │   └── utils.js
+├── start.sh
 └── support
     ├── devserver.js
     └── tunnel.js
@@ -33,9 +41,9 @@ Defines and exports the skill's main handler
 
 Directory of interaction models for the skill, by locale
 
-#### `src/messages.json`
+#### `src/handlers/`
 
-Contains message strings used in responses
+Directory of intent handlers
 
 #### `src/utils.js`
 
@@ -49,6 +57,10 @@ HTTP server used in local development
 
 Helper script to open the [ngrok][] tunnel
 
+#### `start.sh`
+
+Startup script for local development
+
 ## Usage / Development
 
 To start, clone or fork this repo. You will also need to go through the process of creating a skill via the [Alexa Skills Kit (ASK) Developer Console][ask].
@@ -57,9 +69,13 @@ To start, clone or fork this repo. You will also need to go through the process 
 
 The interaction model defines the different intents that the skill will handle. Each intent has a `name`, a `samples` array containing sample utterances a user might use to invoke the intent, and an optional `slots` array. Slots can be used to define arguments to an intent that give Alexa more information about that request.
 
-### Write the Handler
+### Create the Skill
 
-The code for the handler is found in `index.js`. This is where the skill is created, intent handlers are defined, and the main handler is exported.
+The code for creating the skill is found in `index.js` which exports the main handler function.
+
+### Write the Handlers
+
+Handlers are located in `src/handlers/` and are broken out by the intent request that they handle. Add custom handlers here.
 
 ### Testing
 
