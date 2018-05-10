@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 3000;
 const app = new Koa();
 const router = new Router();
 app.use(bodyParser());
-app.use(serve('../src'));
+app.use(serve('src'));
 
 // Create POST route
 router.post('/', async ctx => {
