@@ -20,6 +20,7 @@
   "author": "Adam Gruber",
   "license": "MIT",
   "dependencies": {
+    "@koa/cors": "^2.2.1",
     "ask-sdk": "^2.0.1"
   },
   "devDependencies": {

@@ -3,6 +3,7 @@ const Koa = require('koa');
 const bodyParser = require('koa-bodyparser');
 const Router = require('koa-router');
 const serve = require('koa-static');
+const cors = require('@koa/cors');
 
 const { handler } = require('../index');
 
@@ -11,6 +12,7 @@ const PORT = process.env.PORT || 3000;
 const app = new Koa();
 const router = new Router();
 app.use(bodyParser());
+app.use(cors({ origin: '*' }));
 app.use(serve('src'));
 
 // Create POST route
