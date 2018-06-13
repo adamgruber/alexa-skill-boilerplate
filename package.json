@@ -9,7 +9,8 @@
   },
   "scripts": {
     "tunnel": "node support/tunnel.js",
-    "start": "./start.sh",
+    "start": "node support/start.js",
+    "devserver": "nodemon support/devserver.js",
     "lint": "eslint index.js src"
   },
   "keywords": [
@@ -24,6 +25,7 @@
     "ask-sdk": "^2.0.1"
   },
   "devDependencies": {
+    "cross-spawn": "^6.0.5",
     "eslint": "^4.19.1",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-config-prettier": "^2.9.0",
