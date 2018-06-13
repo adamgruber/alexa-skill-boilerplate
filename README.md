@@ -22,9 +22,9 @@ alexa-skill-boilerplate
 │   │   ├── SessionEnded.js
 │   │   └── index.js
 │   └── utils.js
-├── start.sh
 └── support
     ├── devserver.js
+    ├── start.js
     └── tunnel.js
 ```
 
@@ -53,13 +53,13 @@ A collection of helpful utilities for building the response
 
 HTTP server used in local development
 
+#### `support/start.js`
+
+Startup script for local development
+
 #### `support/tunnel.js`
 
 Helper script to open the [ngrok][] tunnel
-
-#### `start.sh`
-
-Startup script for local development
 
 ## Usage / Development
 
@@ -81,21 +81,13 @@ Handlers are located in `src/handlers/` and are broken out by the intent request
 
 Follow these steps to use the [ASK Developer Console][ask] to test the skill locally.
 
-#### Open the Tunnel
-
-Using [ngrok][], we create an HTTPS tunnel to our localhost on port 3000. Run the following command and be sure to copy the URL that is generated.
-
-```
-$ npm run tunnel
-```
-
-#### Start Development Server
-
-Run this in a separate terminal window. It will prompt you to enter the tunnel URL from the previous step. Once you do so, the script will set the `NGROK_URL` environment variable to this URL and start a simple [koa][] server listening for POST requests on port 3000. The server will automatically restart when changes are detected.
+#### Open the Tunnel and Start the Development Server
 
 ```
 $ npm start
 ```
+
+The `start` command will first create an HTTPS tunnel to our localhost on port 3000, using [ngrok][]. Next, it will set the `NGROK_URL` environment variable to the tunnel URL. Finally it will start a simple [koa][] server listening for POST requests on port 3000. The server will automatically restart when changes are detected.
 
 ##### A Note about Static Assets
 
